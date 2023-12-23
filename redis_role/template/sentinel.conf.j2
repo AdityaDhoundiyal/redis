@@ -1,4 +1,4 @@
-sentinel monitor mymaster {{MASTER_NODE_IP}} {{redis_port}} {{quorum}}
+sentinel monitor mymaster {{masterip}} {{redis_port}} {{quorum}}
 sentinel down-after-milliseconds mymaster 30000
 sentinel failover-timeout mymaster 60000
 sentinel parallel-syncs mymaster 1
