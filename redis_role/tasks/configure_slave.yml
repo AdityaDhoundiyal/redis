@@ -11,7 +11,7 @@
 
 - name: Configure Redis slave master info
   template:
-    src: "redis_role/template/redis_slave.conf.j2"
+    src: "template/redis_slave.conf.j2"
     dest: /etc/redis/redis.conf
   notify: restart redis-server
 
