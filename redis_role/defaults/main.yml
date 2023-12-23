@@ -6,3 +6,4 @@ redis_port: 6379
 protected_mode: "no"
 masterip:  
 numreplicas: 1
+quorum: 2
