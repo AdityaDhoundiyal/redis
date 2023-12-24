@@ -1,7 +1,7 @@
 ---
-- name: Include tasks based on instance tags
-  include_tasks: "{{ item }}"
-  with_first_found:
-    - "{{ role_path }}/tasks/configure_master.yml"  # Adjust the path as needed
-    - "{{ role_path }}/tasks/configure_slave.yml"   # Adjust the path as needed
+- include_tasks: configure_master.yml
+  when: "'master_redis' in hostvars[inventory_hostname].tags.Name"
+
+- include_tasks: configure_slave.yml
+  when: "'slave_redis' in hostvars[inventory_hostname].tags.Name"
 
